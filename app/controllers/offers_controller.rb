@@ -1,4 +1,5 @@
 class OffersController < ApplicationController
+
   def new
     @offer = Offer.new
   end
@@ -10,5 +11,9 @@ class OffersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+
+  def index
+    @offers = Offer.all
+
   end
 end
