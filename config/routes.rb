@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :offers
+  resources :users, only: [:show]
 end
