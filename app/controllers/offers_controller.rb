@@ -41,6 +41,7 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
+    @deal = Deal.new
   end
 
   private

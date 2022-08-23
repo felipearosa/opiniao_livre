@@ -15,3 +15,9 @@
 %>
 </li>
 <% end %>
+
+<h2>Comprar "imparcialidade"</h2>
+<%= simple_form_for [@offer, @deal] do |f| %>
+  <%= f.input :directions %>
+  <%= f.submit "Comprar", class: "btn btn-primary" %>
+<% end %>
