@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :offers
-
-  validates :first_name, presence:true
-  validates :last_name, presence:true
+  has_many :deals
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
