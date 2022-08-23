@@ -1,0 +1,10 @@
+<% @offers.each do |offer|  %>
+  <div>
+    <h2><%= offer.title %></h2>
+    <p><%= offer.description %></p>
+    <p>R$<%= offer.price %>,00</p>
+    <p><%= offer.niche %></p>
+    <p><%= offer.media %></p>
+    <p><%= offer.reach %>people</p>
+  </div>
+<% end %>
