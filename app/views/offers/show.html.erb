@@ -1,23 +1,43 @@
 
-<h1><%= @offer.title %></h1>
-<p><%= @offer.description %></p>
-<p><%= @offer.price %></p>
-<p><%= @offer.niche %></p>
-<p><%= @offer.media %></p>
-<p><%= @offer.reach %></p>
+<div class="container mt-3">
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h1 class="mb-3"> <%= @offer.title %></h1>
+      <p class="mb-4"> <%= @offer.description %></p>
+      <p><b>Price:</b> R$ <%= @offer.price %>,00</p>
+      <p><b>Niche:</b> <%= @offer.niche %></p>
+      <p><b>Media:</b> <%= @offer.media %></p>
+      <p><b>Reach:</b> <%= @offer.reach %> people</p>
+      <% if current_user == @user %>
+        <p class="mt-3">
+          <%= link_to "Delete",
+            offer_path(@offer),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %>
+        </p>
+      <% end %>
 
-<% if current_user == @offer.user %>
-<li class="list-group-offers">
-  <%= @offer.title %>
-<%= link_to "Delete",
-  offer_path(@offer),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-</li>
-<% end %>
+    </div>
+  </div>
+</div>
 
-<h2>Comprar "imparcialidade"</h2>
-<%= simple_form_for [@offer, @deal] do |f| %>
-  <%= f.input :directions %>
-  <%= f.submit "Comprar", class: "btn btn-primary" %>
-<% end %>
+<div class="container mt-5">
+  <div class="buying_card">
+    <h2>Comprar "imparcialidade"</h2>
+    <%= simple_form_for [@offer, @deal] do |f| %>
+      <%= f.input :directions %>
+      <%= f.submit "Comprar", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="card-product">
+    <div class="card-product-infos">
+      <h1 class="mb-3"> <%= "#{@user.first_name} #{@user.last_name}" %></h1>
+      <p><b>Category:</b><%= @user.category %></p>
+      <p><b>Deals closed:</b> <%= @offer.deals.count %></p>
+    </div>
+  </div>
+</div>
