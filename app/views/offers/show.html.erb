@@ -1,0 +1,17 @@
+
+<h1><%= @offer.title %></h1>
+<p><%= @offer.description %></p>
+<p><%= @offer.price %></p>
+<p><%= @offer.niche %></p>
+<p><%= @offer.media %></p>
+<p><%= @offer.reach %></p>
+
+<% if current_user == @offer.user %>
+<li class="list-group-offers">
+  <%= @offer.title %>
+<%= link_to "Delete",
+  offer_path(@offer),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+</li>
+<% end %>
