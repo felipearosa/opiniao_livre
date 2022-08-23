@@ -1,3 +1,14 @@
-<h1>EDIT OFFERS</h1>
+<h1 class="text-center">EDIT OFFERS</h1>
+<div class="container">
+  <div class="">
+    <div class="row new-form">
+      <div class="col-1">
+      </div>
+      <div class="col-4" >
+        <%= render 'form', offer: @offer %>
+        <%= link_to 'See all offers', offers_path, class: 'btn btn-secondary mb-5' %>
+      </div>
+    </div>
+  </div>
 
-<%= render 'form', offer: @offer %>
+</div>

@@ -1,2 +1,96 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Opniao livre</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+</head>
+<body>
+
+<div class="container my-5 w-50">
+<h1>Opnião Livre</h1>
+<p>Encontre a melhor forma de influenciar</p>
+</div>
+
+<%# 
+
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button">Food</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+    <div class="w3-right w3-padding-16">Mail</div>
+    <div class="w3-center w3-padding-16">Opinão Livre</div>
+  </div>
+</div> %>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center" id="NewsPaper">
+    <div class="w3-quarter">
+      <img src="https://images.unsplash.com/photo-1521302200778-33500795e128?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="youtube" style="width:100%">
+      <h3>VLOG NO YOUTUBE</h3>
+      <p>Escolha um youtuber que está bombando para voglar!</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Steak" style="width:100%">
+      <h3>NA PRIMEIRA PÁGINA</h3>
+      <p>Crie um artigo em uma coluna de jornal com os melhores jornalistas do Brasil</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images.unsplash.com/photo-1616469829167-0bd76a80c913?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Twittter" style="width:100%">
+      <h3>TWEET NO #TREDINGTOPICS </h3>
+      <p>Selecione um influeciador para twettar</p>
+      <p>O que voce está pensando?</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images.unsplash.com/photo-1616469829935-c2f33ebd89b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Instagram" style="width:100%">
+      <h3>STORIES NO INSTAGRAM</h3>
+      <p>Que tal um stories para movimentar?</p>
+    </div>
+  </div>
+
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="Advogado" style="width:100%">
+      <h3>ARTIGO JURÍDICO</h3>
+      <p>Encontre o advogado certo!</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="tia do zap" style="width:100%">
+      <h3>TIA DO ZAP</h3>
+      <p>Fake News no grupao da família .</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images.unsplash.com/photo-1527334919515-b8dee906a34b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="twitch" style="width:100%">
+      <h3>Stream na Twitch</h3>
+      <p>Streamando durante os games.</p>
+    </div>
+    <div class="w3-quarter">
+      <img src="https://images.unsplash.com/photo-1598550480917-1c485268676e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Podcast" style="width:100%">
+      <h3>Podcast</h3>
+      <p>Debatendo a favor dentro de um podcast.</p>
+    </div>
+  </div>
+
+   <%= link_to 'BUY OFFER', offers_path, class: 'btn btn-dark my-3' %>
+
+</body>
+</html>
