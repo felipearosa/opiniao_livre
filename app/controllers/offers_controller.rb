@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
 
   def edit
-    @offer = Offer.find(params[:id])
+  @offer = Offer.find(params[:id])
   end
 
   def update
@@ -25,15 +25,26 @@ class OffersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-   end 
+  end
 
   def index
     @offers = Offer.all
   end
-  
-    private
+
+  def destroy
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+    # No need for app/views/offers/destroy.html.erb
+    redirect_to offers_path, status: :see_other
+  end
+
+  def show
+    @offer = Offer.find(params[:id])
+  end
+
+  private
 
   def offer_params
     params.require(:offer).permit(:title, :description, :price, :media, :niche, :reach)
-  end  
+  end
 end
