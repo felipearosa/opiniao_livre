@@ -1,10 +1,11 @@
 <% @offers.each do |offer|  %>
-  <div>
-    <h2><%= offer.title %></h2>
+  <div class="container my-5 w-50">
+    <h2 class="text-center mb-4"><%= offer.title %></h2>
     <p><%= offer.description %></p>
-    <p>R$<%= offer.price %>,00</p>
+    <p>R$ <%= offer.price %>,00</p>
     <p><%= offer.niche %></p>
     <p><%= offer.media %></p>
-    <p><%= offer.reach %>people</p>
+    <p><%= offer.reach %> people</p>
+    <%= link_to 'Add info', offers_path, class: 'btn btn-dark my-3' %>
   </div>
 <% end %>
