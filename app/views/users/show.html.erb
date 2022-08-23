@@ -1,0 +1,18 @@
+<% if @user.politician == true %>
+
+  <h1>YOUR DEALS</h1>
+
+  <% @user.deals.each do |deal| %>
+    <h3><%=  deal.offer.title %>  </h3>
+
+    <p><%= deal.directions  %>  </p>
+  <% end %>
+
+<% else %>
+  <h1>YOUR OFFERS</h1>
+
+  <p><% @user.offers.each do |offer| %></p>
+    <h3><%= link_to offer.title, offer_path(offer) %></h3>
+    <%= offer.description %>
+  <% end %>
+<% end  %>
