@@ -1,5 +1,7 @@
 class Offer < ApplicationRecord
   belongs_to :user
+  has_many :reviews
+  has_many :users, through: :reviews
 
   def index
   end
@@ -11,7 +13,7 @@ class Offer < ApplicationRecord
   end
 
   def delete
-    
+
   end
 
 end
