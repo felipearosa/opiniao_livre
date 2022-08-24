@@ -1,7 +1,7 @@
-<h1 class="text-center">OFFERS</h1>
+<h1 class="text-center mt-3">IMPARCIALIDADES</h1>
 <% if @user && @user.politician == false %>
   <div class="container text-center">
-    <%= link_to 'NEW OFFER', new_offer_path, class: 'btn btn-secondary my-5' %>
+    <%= link_to 'NOVA IMPARCIALIDADE', new_offer_path, class: 'btn btn-secondary my-5' %>
   </div>
 
 <% end %>
@@ -17,10 +17,10 @@
             <p><strong>Descrição:</strong> <%= offer.description %></p>
             <p><strong>Nicho:</strong> <%= offer.niche %></p>
             <p><strong>Media:</strong> <%= offer.media %></p>
-            <p><strong>Alcançe:</strong> <%= offer.reach %> people</p>
-            <h6><strong>R$</strong> <%= offer.price %>,00 <span class="text-success"> ou até 10 x de <%= (offer.price.to_f / 10).to_s.gsub(".", ",")  %>0 sem juros </span></h6>
+            <p><strong>Alcance:</strong> <%= offer.reach %> pessoas</p>
+            <h6><%= number_to_currency(offer.price) %> <span class="text-success"> ou até 10 x de <%= number_to_currency(offer.price_installments)  %> sem juros </span></h6>
 
-            <%= link_to 'See more, and buy!', offer_path(offer), class: 'btn btn-success my-3' %>
+            <%= link_to 'Detalhes | Comprar', offer_path(offer), class: 'btn btn-success my-3' %>
           </div>
         </div>
       </div>
