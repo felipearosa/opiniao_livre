@@ -14,3 +14,17 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+@font-face {
+  font-family: 'Franchise';
+  src: url('Franchise.ttf');
+  font-style: regular;
+  font-weight: 500;
+}
+
+
+@font-face {
+  font-family: 'JMH Typewriter';
+  src: url('JMH Typewriter.otf');
+  font-style: regular;
+  font-weight: 500;
+}
