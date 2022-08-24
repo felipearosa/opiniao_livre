@@ -1,11 +1,29 @@
-<% @offers.each do |offer|  %>
-  <div class="container my-5 w-50">
-    <h2 class="text-center mb-4"><%= offer.title %></h2>
-    <p><%= offer.description %></p>
-    <p>R$ <%= offer.price %>,00</p>
-    <p><%= offer.niche %></p>
-    <p><%= offer.media %></p>
-    <p><%= offer.reach %> people</p>
-    <%= link_to 'Add info', offers_path, class: 'btn btn-dark my-3' %>
+<h1 class="text-center mt-3">IMPARCIALIDADES</h1>
+<% if @user && @user.politician == false %>
+  <div class="container text-center">
+    <%= link_to 'NOVA IMPARCIALIDADE', new_offer_path, class: 'btn btn-secondary my-5' %>
   </div>
+
 <% end %>
+
+<div class = "container-md mt-3">
+  <div class="row">
+    <% @offers.each do |offer|  %>
+      <div class="col-6 mb-3">
+        <div class="card-product m-1">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <h2 class="mb-4"><%= offer.title.upcase %></h2>
+            <p><strong>Descrição:</strong> <%= offer.description %></p>
+            <p><strong>Nicho:</strong> <%= offer.niche %></p>
+            <p><strong>Media:</strong> <%= offer.media %></p>
+            <p><strong>Alcance:</strong> <%= offer.reach %> pessoas</p>
+            <h6><%= number_to_currency(offer.price) %> <span class="text-success"> ou até 10 x de <%= number_to_currency(offer.price_installments)  %> sem juros </span></h6>
+
+            <%= link_to 'Detalhes | Comprar', offer_path(offer), class: 'btn btn-success my-3' %>
+          </div>
+        </div>
+      </div>
+    <% end  %>
+  </div>
+  <%= link_to 'HOME', root_path, class: 'btn btn-secondary my-5' %>

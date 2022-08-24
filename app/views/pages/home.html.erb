@@ -8,20 +8,14 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 .w3-bar-block .w3-bar-item {padding:20px}
 </style>
 </head>
 <body>
 
-<div class="container my-5 w-50">
-<h1>Opnião Livre</h1>
-<p>Encontre a melhor forma de influenciar</p>
-</div>
 
-<%# 
 
-<!-- Sidebar (hidden by default) -->
+<%# <!-- Sidebar (hidden by default) -->
 <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()"
   class="w3-bar-item w3-button">Close Menu</a>
@@ -39,7 +33,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 </div> %>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+<%# <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
   <!-- First Photo Grid-->
   <div class="w3-row-padding w3-padding-16 w3-center" id="NewsPaper">
@@ -91,6 +85,92 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   </div>
 
    <%= link_to 'BUY OFFER', offers_path, class: 'btn btn-dark my-3' %>
+<div class="home-container">
+  <div class="container my-5 text-center" style="font-size: 30px">
+    <h1 class="margin-top" style="font-size: 110px">OPINIAO LIVRE</h1>
+    <p>Encontre a melhor forma de influenciar</p>
+  </div>
+
+   <%# <div class="options">
+    <div class="option active" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1521302200778-33500795e128?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+        <div class="shadow"></div>
+        <div class="label">
+          <div class="icon">
+              <i class="fas fa-walking"></i>
+          </div>
+          <div class="info">
+              <div class="main">VLOG NO YOUTUBE</div>
+              <div class="sub">Escolha um youtuber que está bombando para voglar!</div>
+          </div>
+        </div>
+   </div>
+   <div class="option" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.5)), url(https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+            <i class="fas fa-snowflake"></i>
+         </div>
+         <div class="info">
+            <div class="main">NA PRIMEIRA PÁGINA</div>
+            <div class="sub">Crie um artigo em uma coluna de jornal com os melhores jornalistas do Brasil</div>
+         </div>
+      </div>
+   </div>
+   <div class="option" style="--optionBackground:url(https://images.unsplash.com/photo-1616469829167-0bd76a80c913?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+            <i class="fas fa-tree"></i>
+         </div>
+         <div class="info">
+            <div class="main">STORIES NO INSTAGRAM</div>
+            <div class="sub">Que tal um stories para movimentar</div>
+         </div>
+      </div>
+   </div>
+   <div class="option" style="--optionBackground:url(https://images.unsplash.com/photo-1442458370899-ae20e367c5d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+            <i class="fas fa-tint"></i>
+         </div>
+         <div class="info">
+            <div class="main">ARTIGO JURÍDICO</div>
+            <div class="sub">Encontre o advogado certo!</div>
+         </div>
+      </div>
+   </div>
+   <div class="option" style="--optionBackground:url(https://images.unsplash.com/photo-1616469829935-c2f33ebd89b8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+      <div class="shadow"></div>
+      <div class="label">
+         <div class="icon">
+            <i class="fas fa-sun"></i>
+         </div>
+         <div class="info">
+            <div class="main">TIA DO ZAP</div>
+            <div class="sub">Fake News no grupao da família.</div>
+         </div>
+      </div>
+   </div>
+</div> %>
+
+<%#  %>
+<div class="options">
+<% @offers.last(5).reverse.each_with_index do |offer, i| %>
+    <div class="option <%= "active" if i == 0  %>" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1521302200778-33500795e128?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);">
+        <div class="shadow"></div>
+        <div class="label">
+          <div class="info">
+              <div class="main"><%= offer.title %></div>
+              <div class="sub"><%= offer.media %></div>
+          </div>
+        </div>
+   </div>
+<% end %>
+</div>
+
+
+</div>
 
 </body>
 </html>
