@@ -13,7 +13,8 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  # def image
-  #   if category
-  # end
+  def image
+    if category == 'Tia do Zap'
+    'advogado.jpg'
+  end
 end
