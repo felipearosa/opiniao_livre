@@ -14,6 +14,9 @@
           <%= link_to "Delete",
             offer_path(@offer),
             data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %> |
+          <%= link_to "Edit",
+            edit_offer_path(@offer)
           %>
         </p>
       <% end %>
@@ -22,15 +25,34 @@
   </div>
 </div>
 
-<div class="container mt-5">
-  <div class="buying_card">
-    <h2>Comprar "imparcialidade"</h2>
-    <%= simple_form_for [@offer, @deal] do |f| %>
-      <%= f.input :directions %>
-      <%= f.submit "Comprar", class: "btn btn-light" %>
-    <% end %>
+
+<% if current_user && current_user.politician == true %>
+  <div class="container mt-5">
+    <div class="buying_card">
+      <h2>Comprar "imparcialidade"</h2>
+      <%= simple_form_for [@offer, @deal] do |f| %>
+        <%= f.input :directions %>
+        <%= f.submit "Comprar", class: "btn btn-light" %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% elsif !current_user %>
+  <div class="container mt-5">
+    <div class="buying_card">
+      <h2>Comprar "imparcialidade"</h2>
+        <p><%= link_to "Cadastre-se", new_user_registration_path, class: "text-white" %>
+         ou
+        <%= link_to "faça o login", new_user_session_path, class: "text-white" %>
+         para fechar um negócio.
+        </p>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
 
 <div class="container mt-5">
   <div class="card-product">
