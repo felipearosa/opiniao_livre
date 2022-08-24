@@ -15,7 +15,9 @@ class Offer < ApplicationRecord
   end
 
   def delete
-
   end
 
+  def price_divide
+    @final_price = (@price.to_f / 10).to_s.gsub(".", ",")
+  end
 end
