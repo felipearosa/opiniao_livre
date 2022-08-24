@@ -16,13 +16,13 @@ class Offer < ApplicationRecord
 
   def image
     if media == 'Corrente de Whatsapp'
-      'whatsapp.jpeg'
+      'whatsapp.jpg'
     elsif media == 'Vlog no Youtube'
       'youtube.png'
     elsif media == 'Artigo Jurídico'
       'advogado.jpg'
     elsif media == 'Stories no Instagram'
-      'instagram.jpeg'
+      'instagram.jpg'
     elsif media == 'Dancinha no TikTok'
       'tiktok.jpg'
     elsif media == 'Tweet'
@@ -30,7 +30,7 @@ class Offer < ApplicationRecord
     elsif media == 'Coluna no Jornal'
       'jornal.jpg'
     else
-      'fake.jpeg'
+      'fake.jpg'
     end
   end
 
