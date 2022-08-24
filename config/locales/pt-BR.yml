@@ -1,0 +1,25 @@
+pt-BR:
+  activerecord:
+    models:
+      offer: Ofertas
+      deals: Negócios
+      reviews: Reviews
+    attributes:
+      offer:
+        title: "Título"
+        description: "Descrição"
+        price: "Preço"
+        media: "Mídia"
+        niche: "Nicho"
+        reach: "Alcance"
+      deals:
+        directions: "Instruções"
+      reviews:
+        content: "Conteúdo"
+        rating: "Avaliação"
+      users:
+        email: "email"
+        first_name: "Nome"
+        last_name: "Sobrenome"
+        category: "Categoria"
+        politician: "Político"
