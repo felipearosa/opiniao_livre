@@ -12,13 +12,15 @@
         <div class="shadow"></div>
           <div class="label">
             <div class="info">
-              <div class="main"><%= offer.title %></div>
+              <%= link_to offer.title, offer_path(offer), class:"main text-decoration-none text-white" %>
               <div class="sub"><%= offer.media %></div>
             </div>
         </div>
       </div>
     <% end %>
   </div>
+
+   <%= link_to "Veja todos", offers_path, class:"btn btn-dark mt-5" %>
 
 
 </div>
