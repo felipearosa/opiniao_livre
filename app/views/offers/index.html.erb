@@ -11,7 +11,7 @@
     <% @offers.each do |offer|  %>
       <div class="col-6 mb-3">
         <div class="card-product m-1">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+            <%= image_tag(offer.image) %>
           <div class="card-product-infos">
             <h2 class="mb-4"><%= offer.title.upcase %></h2>
             <p><strong>Descrição:</strong> <%= offer.description %></p>
