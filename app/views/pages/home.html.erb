@@ -8,17 +8,19 @@
 
   <div class="options" data-controller="home">
     <% @offers.last(5).reverse.each_with_index do |offer, i| %>
-      <div class="option <%= "active" if i == 0  %>"style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url(https://images.unsplash.com/photo-1521302200778-33500795e128?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);" data-action="click->home#activate" data-home-target="option">
+      <div class="option <%= "active" if i == 0  %>"style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url('<%= image_path offer.image %>');" data-action="click->home#activate" data-home-target="option">
         <div class="shadow"></div>
           <div class="label">
             <div class="info">
-              <div class="main"><%= offer.title %></div>
+              <%= link_to offer.title, offer_path(offer), class:"main text-decoration-none text-white" %>
               <div class="sub"><%= offer.media %></div>
             </div>
         </div>
       </div>
     <% end %>
   </div>
+
+   <%= link_to "Veja todos", offers_path, class:"btn btn-dark mt-5" %>
 
 
 </div>

@@ -1,4 +1,7 @@
 class Offer < ApplicationRecord
+  CATEGORIES = ['Corrente de Whatsapp', 'Vlog no Youtube', 'Artigo Jurídico', 'Stories no Instagram', 'Dancinha no TikTok', 'Tweet', 'Coluna no Jornal']
+
+
   belongs_to :user
 
   has_many :deals
@@ -6,7 +9,32 @@ class Offer < ApplicationRecord
   has_many :users, through: :reviews
   validates :title, :description, presence: true
 
+
   def price_installments
     price.to_f / 10
   end
+
+  def image
+    if media == 'Corrente de Whatsapp'
+      'whatsapp.jpeg'
+    elsif media == 'Vlog no Youtube'
+      'youtube.png'
+    elsif media == 'Artigo Jurídico'
+      'advogado.jpg'
+    elsif media == 'Stories no Instagram'
+      'instagram.jpeg'
+    elsif media == 'Dancinha no TikTok'
+      'tiktok.jpg'
+    elsif media == 'Tweet'
+      'twitter.jpg'
+    elsif media == 'Coluna no Jornal'
+      'jornal.jpg'
+    else
+      'fake.jpeg'
+    end
+  end
+
+  # def image
+  #   if category
+  # end
 end

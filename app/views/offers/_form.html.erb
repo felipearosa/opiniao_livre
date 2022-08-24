@@ -2,7 +2,7 @@
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :price %>
-  <%= f.input :media %>
+  <%= f.input :media, collection: Offer::CATEGORIES %>
   <%= f.input :niche %>
   <%= f.input :reach %>
   <%= f.submit class: "my-3" %>

@@ -1,16 +1,16 @@
 
 <div class="container mt-3">
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-show">
+    <img class="card-product-img" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
     <div class="card-product-infos">
       <h2 class="mb-3"> <%= @offer.title %></h2>
-      <p class="mb-4"> <%= @offer.description %></p>
-      <p><b>Price:</b> R$ <%= @offer.price %>,00</p>
-      <p><b>Niche:</b> <%= @offer.niche %></p>
-      <p><b>Media:</b> <%= @offer.media %></p>
-      <p><b>Reach:</b> <%= @offer.reach %> people</p>
+      <p class="mb-4 card-product-p"> <%= @offer.description %></p>
+      <p class="card-product-p"><b>Price:</b> R$ <%= @offer.price %>,00</p>
+      <p class="card-product-p"><b>Niche:</b> <%= @offer.niche %></p>
+      <p class="card-product-p"><b>Media:</b> <%= @offer.media %></p>
+      <p class="card-product-p"><b>Reach:</b> <%= @offer.reach %> people</p>
       <% if current_user == @user %>
-        <p class="mt-3">
+        <p class="mt-3 card-product-p">
           <%= link_to "Delete",
             offer_path(@offer),
             data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
@@ -40,7 +40,7 @@
   <div class="container mt-5">
     <div class="buying_card">
       <h2>Comprar "imparcialidade"</h2>
-        <p><%= link_to "Cadastre-se", new_user_registration_path, class: "text-white" %>
+        <p class="card-product-p"><%= link_to "Cadastre-se", new_user_registration_path, class: "text-white" %>
          ou
         <%= link_to "faça o login", new_user_session_path, class: "text-white" %>
          para fechar um negócio.
@@ -55,11 +55,11 @@
 
 
 <div class="container mt-5">
-  <div class="card-product">
+  <div class="card-product-show">
     <div class="card-product-infos">
       <h3 class="mb-3"> <%= "#{@user.first_name} #{@user.last_name}" %></h3>
-      <p><b>Category:</b><%= @user.category %></p>
-      <p><b>Deals closed:</b> <%= @offer.deals.count %></p>
+      <p><b>Categoria: </b><%= @user.category %></p>
+      <p><b>Negócios Fechados:</b> <%= @offer.deals.count %></p>
     </div>
   </div>
 </div>
