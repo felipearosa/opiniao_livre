@@ -8,7 +8,7 @@
 
   <div class="options" data-controller="home">
     <% @offers.last(5).reverse.each_with_index do |offer, i| %>
-      <div class="option <%= "active" if i == 0  %>"style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url('<%= image_path offer.user.image %>');" data-action="click->home#activate" data-home-target="option">
+      <div class="option <%= "active" if i == 0  %>"style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.7)), url('<%= image_path offer.image %>');" data-action="click->home#activate" data-home-target="option">
         <div class="shadow"></div>
           <div class="label">
             <div class="info">

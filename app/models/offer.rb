@@ -14,6 +14,26 @@ class Offer < ApplicationRecord
     price.to_f / 10
   end
 
+  def image
+    if media == 'Corrente de Whatsapp'
+      'whatsapp.jpeg'
+    elsif media == 'Vlog no Youtube'
+      'youtube.png'
+    elsif media == 'Artigo Jurídico'
+      'advogado.jpg'
+    elsif media == 'Stories no Instagram'
+      'instagram.jpeg'
+    elsif media == 'Dancinha no TikTok'
+      'tiktok.jpg'
+    elsif media == 'Tweet'
+      'twitter.jpg'
+    elsif media == 'Coluna no Jornal'
+      'jornal.jpg'
+    else
+      'fake.jpeg'
+    end
+  end
+
   # def image
   #   if category
   # end

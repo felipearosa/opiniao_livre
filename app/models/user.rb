@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  CATEGORIES = ['Tia do Zap', 'Youtuber', 'Advogado', 'Influencer de Instagram', 'TikToker', 'Twitteiro', 'Jornalista']
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
@@ -13,8 +12,5 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  def image
-    if category == 'Tia do Zap'
-    'advogado.jpg'
-  end
+
 end
