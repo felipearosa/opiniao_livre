@@ -1,7 +1,6 @@
 class OffersController < ApplicationController
-
   def edit
-  @offer = Offer.find(params[:id])
+    @offer = Offer.find(params[:id])
   end
 
   def update
@@ -15,7 +14,7 @@ class OffersController < ApplicationController
   end
 
   def new
-    @offer = Offer.new()
+    @offer = Offer.new
   end
 
   def create
@@ -30,6 +29,7 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.all
+    @user = current_user
   end
 
   def destroy
