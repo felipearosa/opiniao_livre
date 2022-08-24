@@ -1,7 +1,7 @@
 
 <div class="container mt-3">
   <div class="card-product-show">
-    <img class="card-product-img" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <%= image_tag(@offer.image, class:'card-product-img')  %>
     <div class="card-product-infos">
       <h2 class="mb-3"> <%= @offer.title %></h2>
       <p class="mb-4 card-product-p"> <%= @offer.description %></p>
