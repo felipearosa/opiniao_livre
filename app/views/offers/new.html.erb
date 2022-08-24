@@ -1,14 +1,15 @@
-<h1 class="text-center">New Offer</h1>
-<div class="container">
-  <div class="">
-    <div class="row new-form">
-      <div class="col-1">
-      </div>
-      <div class="col-4" >
-        <%= render 'form', offer: @offer %>
-        <%= link_to 'See all offers', offers_path, class: 'btn btn-secondary mb-5' %>
+<div class="new">
+  <div class="container w-50">
+    <div class="rounded m-4">
+      <div class="row justify-content-center form-new-offer">
+        <div class="col-12">
+          <div class="d-flex justify-content-between mt-4">
+            <h1 class="">New Offer</h1>
+            <%= link_to 'See all offers', offers_path, class: 'btn btn-secondary mb-5' %>
+          </div>
+          <%= render 'form', offer: @offer %>
+        </div>
       </div>
     </div>
   </div>
-
 </div>
