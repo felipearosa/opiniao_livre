@@ -1,4 +1,3 @@
-
 <div class="container mt-3">
   <div class="card-product-show">
     <%= image_tag(@offer.image, class:'card-product-img')  %>
@@ -25,7 +24,6 @@
   </div>
 </div>
 
-
 <% if current_user && current_user.politician == true %>
   <div class="container mt-5">
     <div class="buying_card">
@@ -40,19 +38,14 @@
   <div class="container mt-5">
     <div class="buying_card">
       <h2>Comprar "imparcialidade"</h2>
-        <p class="card-product-p"><%= link_to "Cadastre-se", new_user_registration_path, class: "text-white" %>
-         ou
+      <p class="card-product-p"><%= link_to "Cadastre-se", new_user_registration_path, class: "text-white" %>
+        ou
         <%= link_to "faça o login", new_user_session_path, class: "text-white" %>
-         para fechar um negócio.
-        </p>
+        para fechar um negócio.
+      </p>
     </div>
   </div>
 <% end %>
-
-
-
-
-
 
 <div class="container mt-5">
   <div class="card-product-show">
@@ -63,7 +56,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="container">
   <%= link_to "Go Back", offers_path, class: "btn btn-dark mt-3" %>
