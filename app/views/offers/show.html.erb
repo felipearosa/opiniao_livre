@@ -1,43 +1,58 @@
 <div class="container mt-3">
-  <div class="card-product-show">
-    <%= image_tag(@offer.image, class:'card-product-img')  %>
-    <div class="card-product-infos">
-      <h2 class="mb-3"> <%= @offer.title %></h2>
+ <div class="container mt-2 mb-4">
+        <%= link_to  '<i class="fa-solid fa-arrow-left"></i>'.html_safe, offers_path, class:'arrow arrow-top'%>
+    </div>
+
+  <div class="card-product-show-back">
+  <h2 class="font-card">Imparcialidade</h2>
+    <div class="card-show">
+
+      <%= image_tag(@offer.image, class:'card-product-img')  %>
+      <div class="card-product-infos">
+        <h2 class="mb-3"> <%= @offer.title %></h2>
       <p class="mb-4 card-product-p"> <%= @offer.description %></p>
       <p class="card-product-p"><b>Preço:</b> <%= number_to_currency(@offer.price) %></p>
       <p class="card-product-p"><b>Nicho:</b> <%= @offer.niche %></p>
       <p class="card-product-p"><b>Mídia:</b> <%= @offer.media %></p>
       <p class="card-product-p"><b>Alcance:</b> <%= @offer.reach %> pessoas</p>
-      <% if current_user == @user %>
-        <p class="mt-3 card-product-p">
-          <%= link_to "Delete",
-            offer_path(@offer),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-          %> |
-          <%= link_to "Edit",
-            edit_offer_path(@offer)
-          %>
-        </p>
-      <% end %>
-
+        <% if current_user == @user %>
+          <p class="mt-3 card-product-p">
+            <%= link_to "Delete",
+              offer_path(@offer),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-dark"
+            %> |
+            <%= link_to "Edit",
+              edit_offer_path(@offer), class: "text-decoration-none text-dark"
+            %>
+          </p>
+        <% end %>
+      </div>
     </div>
+    <div class="card-product-show">
+    <div class="card-product-flex">
+      <h3 class="mb-3 font-card"> <%= "#{@user.first_name} #{@user.last_name}" %></h3>
+      <p><b>Categoria: </b><%= @user.category %></p>
+      <p><b>Negócios Fechados:</b> <%= @offer.deals.count %></p>
+    </div>
+  </div>
+
   </div>
 </div>
 
 <% if current_user && current_user.politician == true %>
   <div class="container mt-5">
     <div class="buying_card">
-      <h2>Comprar "imparcialidade"</h2>
+      <h2 class="font-card">Comprar "imparcialidade"</h2>
       <%= simple_form_for [@offer, @deal] do |f| %>
         <%= f.input :directions %>
-        <%= f.submit "Comprar", class: "btn btn-light" %>
+        <%= f.submit "Comprar", class: "btn btn-success btn-rounded-index" %>
       <% end %>
     </div>
   </div>
 <% elsif !current_user %>
   <div class="container mt-5">
     <div class="buying_card">
-      <h2>Comprar "imparcialidade"</h2>
+      <h2 class="font-card">Comprar "imparcialidade"</h2>
       <p class="card-product-p"><%= link_to "Cadastre-se", new_user_registration_path, class: "text-white" %>
         ou
         <%= link_to "faça o login", new_user_session_path, class: "text-white" %>
@@ -46,17 +61,3 @@
     </div>
   </div>
 <% end %>
-
-<div class="container mt-5">
-  <div class="card-product-show">
-    <div class="card-product-infos">
-      <h3 class="mb-3"> <%= "#{@user.first_name} #{@user.last_name}" %></h3>
-      <p><b>Categoria: </b><%= @user.category %></p>
-      <p><b>Negócios Fechados:</b> <%= @offer.deals.count %></p>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <%= link_to "Go Back", offers_path, class: "btn btn-dark mt-3" %>
-</div>
