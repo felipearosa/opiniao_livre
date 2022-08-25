@@ -1,12 +1,17 @@
-<h1 class="text-center mt-3">IMPARCIALIDADES</h1>
+
+<%# Seta que volta pra home usando icon %>
+<div class="container-md">
+  <h1 class="text-center mt-4" id="imparcialidades">IMPARCIALIDADES</h1>
+  <%= link_to  '<i class="fa-solid fa-arrow-left"></i>'.html_safe, root_path, class:'arrow arrow-top'%>
+</div>
+
 <% if @user && @user.politician == false %>
   <div class="container text-center">
     <%= link_to 'NOVA IMPARCIALIDADE', new_offer_path, class: 'btn btn-secondary my-5' %>
   </div>
-
 <% end %>
 
-<div class = "container-md mt-3">
+<div class = "container-md mt-4">
   <div class="row">
     <% @offers.reverse.each do |offer|  %>
       <div class="col-6 mb-3">
@@ -20,11 +25,13 @@
             <p><strong>Alcance:</strong> <%= offer.reach %> pessoas</p>
             <h6><%= number_to_currency(offer.price) %> <span class="text-success"> ou até 10 x de <%= number_to_currency(offer.price_installments)  %> sem juros </span></h6>
 
-            <%= link_to 'Detalhes | Comprar', offer_path(offer), class: 'btn btn-success my-3' %>
+            <%= link_to 'Detalhes | Comprar', offer_path(offer), class: 'btn btn-success my-3 btn-rounded-index font-card' %>
           </div>
         </div>
       </div>
     <% end  %>
   </div>
-  <%= link_to 'HOME', root_path, class: 'btn btn-secondary my-5' %>
+
+  <a class="arrow" href="#imparcialidades"><i class="fa-solid fa-arrow-up"></i></a>
+
 </div>
