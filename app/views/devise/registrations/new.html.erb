@@ -4,7 +4,7 @@
       <div class="row justify-content-center form-signup">
         <div class="col-12">
           <h2>Cadastre-se</h2>
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false, controller: "hidden"}) do |f| %>
             <%= f.error_notification %>
 
             <div class="form-inputs">
@@ -24,9 +24,9 @@
                           required: true,
                           input_html: { autocomplete: "new-password" } %>
               <%= f.input :politician,
-                          required: false %>
+                          required: false, input_html: { data: { action: 'change->hidden#hide' } } %>
               <%= f.input :category,
-                          required: true%>
+                          required: true, wrapper_html: { data: { hidden_target: 'category' } }%>
             </div>
 
             <div class="form-actions">
