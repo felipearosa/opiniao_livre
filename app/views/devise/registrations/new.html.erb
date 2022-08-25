@@ -23,17 +23,10 @@
               <%= f.input :password_confirmation,
                           required: true,
                           input_html: { autocomplete: "new-password" } %>
-
-              <% if politician == true %>
               <%= f.input :politician,
                           required: false %>
-                  <% visibility:  %>
-
-              <% else %>
               <%= f.input :category,
                           required: true%>
-
-              <% end %>
             </div>
 
             <div class="form-actions">

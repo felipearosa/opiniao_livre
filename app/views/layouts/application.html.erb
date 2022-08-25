@@ -15,8 +15,11 @@
     <%= render "shared/navbar" %>
     <%= yield %>
 
-    <p class="notice alert alert-secondary"><%= notice %></p>
-    <p class="alert alert-secondary"><%= alert %></p>
+    <% if notice %>
+      <p class="notice alert alert-secondary"><%= notice %></p>
+    <% elsif alert %>
+      <p class="alert alert-secondary"><%= alert %></p>
+    <% end %>
     <%= render "shared/footer" %>
   </body>
 </html>
