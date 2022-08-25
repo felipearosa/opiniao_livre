@@ -4,6 +4,7 @@ pt-BR:
       offer: Ofertas
       deals: Negócios
       reviews: Reviews
+      user: Usuário
     attributes:
       offer:
         title: "Título"
