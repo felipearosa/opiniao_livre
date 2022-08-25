@@ -39,8 +39,8 @@
             <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= offer.niche %></p>
             <p class="card-product-user card-product-user-p"><strong>Media:</strong> <%= offer.media %></p>
             <p class="card-product-user card-product-user-p"><strong>Alcance:</strong> <%= offer.reach %> pessoas</p>
-            <%= link_to "Edit", edit_offer_path(offer), class:"btn btn-primary mt-3" %>
-            <%= link_to "Delete", offer_path(offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger mt-3 text-white" %>
+            <%= link_to "Edit", edit_offer_path(offer), class:"btn btn-primary mt-3" if policy(offer).edit? %>
+            <%= link_to "Delete", offer_path(offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger mt-3 text-white" if policy(offer).destroy? %>
           </div>
         </div>
       </div>
