@@ -1,6 +1,6 @@
 class UserPolicy < ApplicationPolicy
   def show?
-    !record.politician
+    record == user || !record.politician
   end
 
   class Scope < Scope
