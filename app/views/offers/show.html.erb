@@ -10,11 +10,11 @@
       <%= image_tag(@offer.image, class:'card-product-img')  %>
       <div class="card-product-infos">
         <h2 class="mb-3"> <%= @offer.title %></h2>
-        <p class="mb-4 card-product-p"> <%= @offer.description %></p>
-        <p class="card-product-p"><b>Price:</b> R$ <%= @offer.price %>,00</p>
-        <p class="card-product-p"><b>Niche:</b> <%= @offer.niche %></p>
-        <p class="card-product-p"><b>Media:</b> <%= @offer.media %></p>
-        <p class="card-product-p"><b>Reach:</b> <%= @offer.reach %> people</p>
+      <p class="mb-4 card-product-p"> <%= @offer.description %></p>
+      <p class="card-product-p"><b>Preço:</b> <%= number_to_currency(@offer.price) %></p>
+      <p class="card-product-p"><b>Nicho:</b> <%= @offer.niche %></p>
+      <p class="card-product-p"><b>Mídia:</b> <%= @offer.media %></p>
+      <p class="card-product-p"><b>Alcance:</b> <%= @offer.reach %> pessoas</p>
         <% if current_user == @user %>
           <p class="mt-3 card-product-p">
             <%= link_to "Delete",

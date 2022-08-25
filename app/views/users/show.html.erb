@@ -1,18 +1,73 @@
 <% if @user.politician == true %>
+  <div class = "container-md mt-3">
+    <h1>YOUR DEALS</h1>
+    <div class="row">
 
-  <h1>YOUR DEALS</h1>
 
-  <% @user.deals.each do |deal| %>
-    <h3><%=  deal.offer.title %>  </h3>
+    <% @user.deals.reverse.each do |deal|  %>
+        <div class="col-12 mb-3">
+          <div class="card-product-show m-1">
+              <%= image_tag(deal.offer.image, class:'card-product-img') %>
+            <div class="card-product-infos">
+              <h2 class="mb-4 card-product-h2"><%= deal.offer.title.upcase %></h2>
+              <p class="card-product-user card-product-user-p"><strong>Descrição:</strong> <%= deal.offer.description %></p>
+              <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= deal.offer.niche %></p>
+              <p class="card-product-user card-product-user-p"><strong>Media:</strong> <%= deal.offer.media %></p>
+              <p class="card-product-user card-product-user-p mb-5"><strong>Alcance:</strong> <%= deal.offer.reach %> pessoas</p>
+              <p class="card-product-user card-product-user-p card-orientations"><strong>Suas orientações:</strong> <%= deal.directions %></p>
 
-    <p><%= deal.directions  %>  </p>
-  <% end %>
+            </div>
+          </div>
+        </div>
+<% end  %>
 
+
+    </div>
+    <%= link_to 'HOME', root_path, class: 'btn btn-secondary my-5' %>
+  </div>
 <% else %>
+<div class = "container-md mt-3">
   <h1>YOUR OFFERS</h1>
+  <div class="row">
+    <% @journalist_offers.reverse.each do |offer|  %>
+      <div class="col-12 mb-3">
+        <div class="card-product-show m-1">
+            <%= image_tag(offer.image, class:'card-product-img') %>
+          <div class="card-product-infos">
+            <h2 class="mb-4 card-product-h2"><%= offer.title.upcase %></h2>
+            <p class="card-product-user card-product-user-p"><strong>Descrição:</strong> <%= offer.description %></p>
+            <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= offer.niche %></p>
+            <p class="card-product-user card-product-user-p"><strong>Media:</strong> <%= offer.media %></p>
+            <p class="card-product-user card-product-user-p"><strong>Alcance:</strong> <%= offer.reach %> pessoas</p>
+            <%= link_to "Edit", edit_offer_path(offer), class:"btn btn-primary mt-3" %>
+            <%= link_to "Delete", offer_path(offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger mt-3 text-white" %>
+          </div>
+        </div>
+      </div>
+    <% end  %>
+  </div>
+  <%= link_to 'HOME', root_path, class: 'btn btn-secondary my-5' %>
+</div>
+<% end  %>
 
-  <p><% @user.offers.each do |offer| %></p>
-    <h3><%= link_to offer.title, offer_path(offer) %></h3>
-    <%= offer.description %>
+
+
+
+<% @user.deals do |deal|  %>
+  <% deal.offers.each do |offer| %>
+    <div class="col-12 mb-3">
+      <div class="card-product-show m-1">
+          <%= image_tag(offer.image, class:'card-product-img') %>
+        <div class="card-product-infos">
+          <h2 class="mb-4 card-product-h2"><%= offer.title.upcase %></h2>
+          <p class="card-product-user card-product-user-p"><strong>Descrição:</strong> <%= offer.description %></p>
+          <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= offer.niche %></p>
+          <p class="card-product-user card-product-user-p"><strong>Media:</strong> <%= offer.media %></p>
+          <p class="card-product-user card-product-user-p"><strong>Alcance:</strong> <%= offer.reach %> pessoas</p>
+          <%= link_to "Edit", edit_offer_path(offer), class:"btn btn-primary mt-3" %>
+          <%= link_to "Delete", offer_path(offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger mt-3 text-white" %>
+        </div>
+      </div>
+    </div>
   <% end %>
 <% end  %>
