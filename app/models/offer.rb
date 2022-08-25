@@ -7,8 +7,9 @@ class Offer < ApplicationRecord
   has_many :deals
   has_many :reviews
   has_many :users, through: :reviews
-  validates :title, :description, presence: true
-
+  validates :title, :description, :price, :media, :niche, :reach, presence: true
+  validates :description, length: { maximum: 240 }
+  validates :title, length: { maximum: 56 }
 
   def price_installments
     price.to_f / 10
