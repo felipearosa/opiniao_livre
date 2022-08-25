@@ -3,7 +3,7 @@
     <div class="rounded m-4">
       <div class="row justify-content-center form-edit-user">
         <div class="col-12">
-          <h2>Editar <%= resource_name.to_s.humanize %></h2>
+          <h2>Editar Usuário</h2>
 
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= f.error_notification %>
@@ -18,14 +18,14 @@
               <%= f.input :password,
                           hint: "Deixe em branco caso não queira alterá-lo",
                           required: false,
-                          input_html: { autocomplete: "new-password" } %>
+                          input_html: { autocomplete: "nova senha" } %>
               <%= f.input :password_confirmation,
                           required: false,
-                          input_html: { autocomplete: "new-password" } %>
+                          input_html: { autocomplete: "nova senha" } %>
               <%= f.input :current_password,
                           hint: "Insira sua senha atual para confirmar a mudança",
                           required: true,
-                          input_html: { autocomplete: "current-password" } %>
+                          input_html: { autocomplete: "senha atual" } %>
             </div>
 
             <div class="form-actions">
@@ -33,9 +33,9 @@
             </div>
           <% end %>
 
-          <p>Infeliz? <%= link_to "Cancele sua conta AQUI", registration_path(resource_name), data: { confirm: "Você tem certeza?" }, method: :delete, class: "btn btn-warning" %></p>
-
-          <%= link_to "Voltar", :back, class: "text-decoration-none" %>
+          <p>Infeliz? Não foi reeleito?</p>
+          <%= link_to "Cancele sua conta AQUI", registration_path(resource_name), data: { confirm: "Você tem certeza?" }, method: :delete, class: "btn btn-dark" %>
+          <p class="mt-3"><%= link_to "Voltar", :back, class: "text-decoration-none" %></p>
         </div>
       </div>
     </div>
