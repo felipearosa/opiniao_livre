@@ -20,7 +20,7 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end font-card" aria-labelledby="navbarDropdown">
-              <%# <h2 class="font-card">  %>
+             <span class="dropdown-item"> <%= current_user.first_name if user_signed_in?%></span>
               <%= link_to "Editar perfil", "#", class: "dropdown-item" %>
               <%= link_to "Imparcialidades", offers_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
