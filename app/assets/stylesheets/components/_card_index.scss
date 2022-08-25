@@ -1,4 +1,5 @@
 .card-product {
+  border-radius: 35px;
   overflow: hidden;
   height: 350px;
   background: white;
@@ -39,4 +40,21 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.btn-rounded-index {
+  border-radius: 50px;
+  padding: 10px 40px;
+}
+
+.arrow {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 50%;
+}
+
+.arrow-top {
+  width: 43px;
+  height: 51px;
 }
