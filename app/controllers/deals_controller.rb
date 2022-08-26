@@ -4,6 +4,7 @@ class DealsController < ApplicationController
     @deal.user = current_user
     @offer = Offer.find(params[:offer_id])
     @deal.offer = @offer
+    authorize @deal
 
     if @deal.save
       redirect_to user_path(current_user)
