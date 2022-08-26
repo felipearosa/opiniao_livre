@@ -16,11 +16,11 @@ class ApplicationController < ActionController::Base
   end
 
   # Uncomment when you *really understand* Pundit!
-  # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-  # def user_not_authorized
-  #   flash[:alert] = "Você não está autorizado a acessar essa sessão."
-  #   redirect_to(root_path)
-  # end
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  def user_not_authorized
+    flash[:alert] = "Você não está autorizado a acessar essa sessão."
+    redirect_to(root_path)
+  end
 
   private
 

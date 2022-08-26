@@ -1,4 +1,5 @@
 class DealsController < ApplicationController
+
   def create
     @deal = Deal.new(deal_params)
     @deal.user = current_user
