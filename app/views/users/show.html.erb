@@ -10,7 +10,7 @@
       <% @user.deals.reverse.each do |deal|  %>
         <div class="card-show">
           <%= image_tag(deal.offer.image, class:'card-product-img') %>
-          <div class="card-product-infos">
+          <div class="card-product-infos font-card">
             <h2 class="mb-4 card-product-h2"><%= deal.offer.title.upcase %></h2>
             <p class="card-product-user card-product-user-p"><strong>Descrição:</strong> <%= deal.offer.description %></p>
             <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= deal.offer.niche %></p>
@@ -32,18 +32,18 @@
     </div>
 
     <div class="card-product-show-back">
-      <h2 class="font-card">SUAS IMPARCIALIDADE</h2>
+      <h2 class="font-card">IMPARCIALIDADE</h2>
 
       <% @journalist_offers.reverse.each do |offer|  %>
         <div class="card-show">
           <%= image_tag(offer.image, class:'card-product-img') %>
-          <div class="card-product-infos">
-          <div>
-            <h2 class="mb-4 card-product-h2"><%= offer.title.upcase %></h2>
-            <p class="card-product-user card-product-user-p"><strong>Descrição:</strong> <%= offer.description %></p>
-            <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= offer.niche %></p>
-            <p class="card-product-user card-product-user-p"><strong>Mídia:</strong> <%= offer.media %></p>
-            <p class="card-product-user card-product-user-p"><strong>Alcance:</strong> <%= offer.reach %> pessoas</p>
+          <div class="card-product-infos font-card">
+            <div>
+              <h2 class="mb-4 card-product-h2"><%= offer.title.upcase %></h2>
+              <p class="card-product-user card-product-user-p"><strong>Descrição:</strong> <%= offer.description %></p>
+              <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= offer.niche %></p>
+              <p class="card-product-user card-product-user-p"><strong>Mídia:</strong> <%= offer.media %></p>
+              <p class="card-product-user card-product-user-p"><strong>Alcance:</strong> <%= offer.reach %> pessoas</p>
             </div>
             <div class="d-flex align-items-end justify-content-end gap-3">
               <%= link_to "Edit", edit_offer_path(offer), class:"btn btn-dark p2 btn-rounded-index" if policy(offer).edit? %>
