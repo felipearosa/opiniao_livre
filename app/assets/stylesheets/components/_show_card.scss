@@ -23,12 +23,12 @@
   box-shadow:0px 20px 73px -9px rgba(0, 0, 0, 0.15);
   border-radius: 67px;
   padding: 50px;
+  display: flex;
 }
 
 .card-product-flex {
   display: flex;
   justify-content: space-between;
-
 }
 
 
@@ -53,6 +53,10 @@
 
 .card-product-infos {
   margin: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 320px;
 }
 
 .card-product-h2 {
@@ -75,8 +79,6 @@
     margin:  auto;
     margin-left: 66px;
   }
-
-
 
 @media only screen and (max-width: 900px) {
 

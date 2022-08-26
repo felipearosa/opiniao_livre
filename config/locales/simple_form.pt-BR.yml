@@ -15,7 +15,7 @@ pt-BR:
       password: 'Password'
       user:
         new:
-          email: 'E-mail para efetuar o sign in.'
+          email: 'E-mail.'
           first_name: 'Nome'
           last_name: 'Sobrenome'
           password: 'Senha'
@@ -23,6 +23,8 @@ pt-BR:
           category: 'Categoria'
           remember_me: 'Manter logado'
           sign-up: 'Registre-se'
+          politician: 'Político'
+
         edit:
           email: 'E-mail.'
           password: 'Senha'
