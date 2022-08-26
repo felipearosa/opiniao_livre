@@ -34,8 +34,13 @@ class OffersController < ApplicationController
   end
 
   def index
-    @offers = Offer.all
+    @user == current_user
     @offers = policy_scope(Offer)
+    if params[:query].present?
+      @offers = Offer.search_by_atts(params[:query])
+    else
+      @offers = Offer.all
+    end
     @user = current_user
   end
 
