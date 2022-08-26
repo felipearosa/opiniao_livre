@@ -20,7 +20,7 @@
         <div class="card-product m-1">
             <%= image_tag(offer.image) %>
           <div class="card-product-infos font-card">
-            <h2 class="mb-4"><%= offer.title.upcase %></h2>
+            <h2 class="mb-4 font-card"><%= offer.title.upcase %></h2>
             <p><strong>Descrição:</strong> <%= offer.description %></p>
             <p><strong>Nicho:</strong> <%= offer.niche %></p>
             <p><strong>Media:</strong> <%= offer.media %></p>
@@ -33,7 +33,7 @@
       </div>
     <% end %>
   </div>
-  <a class="arrow" href="#imparcialidades"><i class="fa-solid fa-arrow-up"></i></a>
+  <a class="arrow mb-2" href="#imparcialidades"><i class="fa-solid fa-arrow-up mb-2"></i></a>
 
 <% else %>
   <h2 class="my-3">Patifaria não encontrada.</h2>

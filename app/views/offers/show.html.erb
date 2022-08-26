@@ -9,20 +9,20 @@
 
       <%= image_tag(@offer.image, class:'card-product-img')  %>
       <div class="card-product-infos">
-        <h2 class="mb-3"> <%= @offer.title %></h2>
+        <h2 class="mb-3 font-card"> <%= @offer.title %></h2>
       <p class="mb-4 card-product-p font-card"> <%= @offer.description %></p>
-      <p class="card-product-p"><b>Preço:</b> <%= number_to_currency(@offer.price) %></p>
-      <p class="card-product-p"><b>Nicho:</b> <%= @offer.niche %></p>
+      <p class="card-product-p"><strong><b>Preço:</b></strong> <%= number_to_currency(@offer.price) %></p>
+      <p class="card-product-p"><strong><b>Nicho:</b></strong> <%= @offer.niche %></p>
       <p class="card-product-p"><b>Mídia:</b> <%= @offer.media %></p>
       <p class="card-product-p"><b>Alcance:</b> <%= @offer.reach %> pessoas</p>
         <% if current_user == @user %>
           <p class="mt-3 card-product-p">
-            <%= link_to "Delete",
+            <%= link_to "Editar",
+              edit_offer_path(@offer), class: "btn btn-dark mb-5 btn-rounded-index"
+            %>
+            <%= link_to "Deletar",
               offer_path(@offer),
-              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-decoration-none text-dark"
-            %> |
-            <%= link_to "Edit",
-              edit_offer_path(@offer), class: "text-decoration-none text-dark"
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-secundary mb-5 btn-rounded-index"
             %>
           </p>
         <% end %>
