@@ -10,7 +10,7 @@
       <% @user.deals.reverse.each do |deal|  %>
            <div class="card-show">
                 <%= image_tag(deal.offer.image, class:'card-product-img') %>
-              <div class="card-product-infos">
+              <div class="card-product-infos font-card">
                 <h2 class="mb-4 card-product-h2"><%= deal.offer.title.upcase %></h2>
                 <p class="card-product-user card-product-user-p"><strong>Descrição:</strong> <%= deal.offer.description %></p>
                 <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= deal.offer.niche %></p>
@@ -37,7 +37,7 @@
     <% @journalist_offers.reverse.each do |offer|  %>
     <div class="card-show">
       <%= image_tag(offer.image, class:'card-product-img') %>
-      <div class="card-product-infos">
+      <div class="card-product-infos font-card">
         <h2 class="mb-4 card-product-h2"><%= offer.title.upcase %></h2>
         <p class="card-product-user card-product-user-p"><strong>Descrição:</strong> <%= offer.description %></p>
         <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= offer.niche %></p>
