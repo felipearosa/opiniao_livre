@@ -9,14 +9,17 @@
             <%= f.error_notification %>
 
             <div class="form-inputs">
-              <%= f.input :email, required: true, autofocus: true %>
+              <%= f.input :email,
+              hint: "Digite aqui seu novo e-mail. Espero que a PF nao acesse o antigo...",
+              required: true,
+              autofocus: true %>
 
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                 <p>Aguardando confirmação para: <%= resource.unconfirmed_email %></p>
               <% end %>
 
               <%= f.input :password,
-                          hint: "Deixe em branco caso não queira alterá-lo",
+                          hint: "Deixe em branco caso não queira alterar",
                           required: false,
                           input_html: { autocomplete: "nova senha" } %>
               <%= f.input :password_confirmation,

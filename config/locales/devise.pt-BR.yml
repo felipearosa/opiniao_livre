@@ -3,14 +3,14 @@
 pt-BR:
   devise:
     confirmations:
-      confirmed: "Sua conta foi confirmada com sucesso. Você está logado."
+      confirmed: "Sua conta foi confirmada com sucesso. Você está logado. É como se fosse Brasília!"
       send_instructions: "Dentro de minutos, você receberá um e-mail com instruções para a confirmação da sua conta."
       send_paranoid_instructions: "Se o seu endereço de e-mail estiver cadastrado, você receberá uma mensagem com instruções para confirmação da sua conta."
     failure:
       already_authenticated: "Você já está logado."
       inactive: "Sua conta ainda não foi ativada."
       invalid: "%{authentication_keys} ou senha inválida."
-      locked: "Sua conta está bloqueada."
+      locked: "Sua conta está bloqueada. Até aqui?"
       last_attempt: "Você tem mais uma tentativa antes de bloquear sua conta."
       not_found_in_database: "%{authentication_keys} ou senha inválida."
       timeout: "Sua sessão expirou, por favor, efetue login novamente para continuar."
@@ -24,9 +24,9 @@ pt-BR:
       unlock_instructions:
         subject: "Instruções de desbloqueio"
       email_changed:
-        subject: "E-mail alterado"
+        subject: "E-mail alterado, quase uma ficha limpa!"
       password_change:
-        subject: "Senha alterada"
+        subject: "Senha alterada, cuidado com os hakers..."
     omniauth_callbacks:
       failure: "Não foi possível autenticá-lo como %{kind} porque %{reason}."
       success: "Autenticado com sucesso com uma conta de %{kind}."
@@ -34,10 +34,10 @@ pt-BR:
       no_token: "Você só pode acessar essa página através de um e-mail de troca de senha. Se já estiver acessando por um e-mail, verifique se a URL fornecida está completa."
       send_instructions: "Dentro de minutos, você receberá um e-mail com instruções para a troca da sua senha."
       send_paranoid_instructions: "Se o seu endereço de e-mail estiver cadastrado, você receberá um link de recuperação da senha via e-mail."
-      updated: "Sua senha foi alterada com sucesso. Você está logado."
-      updated_not_active: "Sua senha foi alterada com sucesso."
+      updated: "Sua senha foi alterada com sucesso. Você está logado. Cuidado com os hackers..."
+      updated_not_active: "Sua senha foi alterada com sucesso. Cuidado com os hackers..."
     registrations:
-      destroyed: "Sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve."
+      destroyed: "Sua conta foi cancelada com sucesso, assim como seus direitos políticos."
       signed_up: "Login efetuado com sucesso. Se não foi autorizado, a confirmação será enviada por e-mail."
       signed_up_but_inactive: "Você foi cadastrado com sucesso. No entanto, não foi possível efetuar login, pois sua conta não foi ativada."
       signed_up_but_locked: "Você foi cadastrado com sucesso. No entanto, não foi possível efetuar login, pois sua conta está bloqueada."
@@ -46,9 +46,9 @@ pt-BR:
       updated: "Sua conta foi atualizada com sucesso."
       updated_but_not_signed_in: "Sua conta foi atualizada com sucesso. Como sua senha mudou, você precisa refazer o login."
     sessions:
-      signed_in: "Login efetuado com sucesso!"
-      signed_out: "Saiu com sucesso."
-      already_signed_out: "Saiu com sucesso."
+      signed_in: "Login efetuado com sucesso, bom atentado à democracia!"
+      signed_out: "Saiu com sucesso, não esqueca de assistir ao noticiário."
+      already_signed_out: "Saiu com sucesso, não esqueca de assistir ao noticiário."
     unlocks:
       send_instructions: "Dentro de minutos, você receberá um email com instruções para o desbloqueio da sua conta."
       send_paranoid_instructions: "Se sua conta existir, você receberá um e-mail com instruções para desbloqueá-la em alguns minutos."
