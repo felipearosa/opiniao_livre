@@ -11,6 +11,14 @@ class Offer < ApplicationRecord
   validates :description, length: { maximum: 240 }
   validates :title, length: { maximum: 56 }
 
+  include PgSearch::Model
+    pg_search_scope :search_by_atts,
+      against: [ :title, :description, :media, :niche ],
+      using: {
+        tsearch: { any_word: true, prefix: true } #
+      }
+
+
   def price_installments
     price.to_f / 10
   end
