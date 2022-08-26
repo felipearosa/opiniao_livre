@@ -39,8 +39,6 @@
   border-radius: 67px 0 0 67px;
 }
 
-
-
 .card-product h1 {
   font-size: 26px;
 }
@@ -73,6 +71,12 @@
   font-family: "JMH Typewriter";
 }
 
+.footer-align {
+    margin:  auto;
+    margin-left: 66px;
+  }
+
+
 
 @media only screen and (max-width: 900px) {
 
@@ -90,5 +94,6 @@
     max-width:30%;
     object-fit: cover;
   }
+
 
 }
