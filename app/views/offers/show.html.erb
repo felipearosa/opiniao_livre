@@ -30,7 +30,7 @@
     </div>
     <div class="card-product-show">
     <div class="card-product-flex">
-      <h3 class="mb-3 font-card"> <%= "#{@user.first_name} #{@user.last_name}" %></h3>
+      <h3 class="mb-3 font-card"> <%= link_to "#{@user.first_name} #{@user.last_name}", user_path(@user), class:"text-dark" %></h3>
       <p><b>Categoria: </b><%= @user.category %></p>
       <p><b>Negócios Fechados:</b> <%= @offer.deals.count %></p>
     </div>
