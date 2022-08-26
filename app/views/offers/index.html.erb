@@ -25,7 +25,7 @@
             <p><strong>Nicho:</strong> <%= offer.niche %></p>
             <p><strong>Media:</strong> <%= offer.media %></p>
             <p><strong>Alcance:</strong> <%= offer.reach %> pessoas</p>
-            <h6><%= number_to_currency(offer.price) %> <span class="text-success font-card"> ou até 10 x de <%= number_to_currency(offer.price_installments)  %> sem juros </span></h6>
+            <h6 class="font-card"><%= number_to_currency(offer.price) %> <span class="text-success font-card"> ou até 10 x de <%= number_to_currency(offer.price_installments)  %> sem juros </span></h6>
 
             <%= link_to (current_user && !current_user.politician)  ? 'DETALHES' : 'COMPRAR' , offer_path(offer), class: 'btn btn-success my-3 btn-rounded-index font-card text-white' %>
           </div>

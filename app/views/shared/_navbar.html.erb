@@ -10,13 +10,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
+    <%= form_with url: offers_path, method: :get, class: "d-flex font-card" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control form-nav",
         placeholder: "Procurar Fake News"
       %>
-      <%= submit_tag "Buscar", class: "btn btn-dark btn-form-nav" %>
+      <%= submit_tag "Buscar", class: "btn btn-dark btn-form-nav font-card" %>
     <% end %>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
