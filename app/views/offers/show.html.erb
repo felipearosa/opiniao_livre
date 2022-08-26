@@ -9,7 +9,7 @@
 
       <%= image_tag(@offer.image, class:'card-product-img')  %>
       <div class="card-product-infos">
-        <h2 class="mb-3 font-card"> <%= @offer.title %></h2>
+        <h2 class="mb-3 font-card font-card"> <%= @offer.title %></h2>
       <p class="mb-4 card-product-p font-card"> <%= @offer.description %></p>
       <p class="card-product-p"><strong><b>Preço:</b></strong> <%= number_to_currency(@offer.price) %></p>
       <p class="card-product-p"><strong><b>Nicho:</b></strong> <%= @offer.niche %></p>
@@ -20,7 +20,7 @@
             <%= link_to "Editar",
               edit_offer_path(@offer), class: "btn btn-dark mb-5 btn-rounded-index"
             %>
-            <%= link_to "Deletar",
+            <%= link_to "Apagar",
               offer_path(@offer),
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-secundary mb-5 btn-rounded-index"
             %>
