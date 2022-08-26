@@ -1,54 +1,58 @@
 <% if @user.politician == true %>
   <div class = "container-md mt-3">
     <div class="container mt-2 mb-4">
-        <%= link_to  '<i class="fa-solid fa-arrow-left"></i>'.html_safe, offers_path, class:'arrow arrow-top'%>
-      </div>
+      <%= link_to  '<i class="fa-solid fa-arrow-left"></i>'.html_safe, offers_path, class:'arrow arrow-top'%>
+    </div>
 
-      <div class="card-product-show-back">
+    <div class="card-product-show-back">
       <h2 class="font-card">SUAS CONTRATAÇÕES</h2>
 
       <% @user.deals.reverse.each do |deal|  %>
-           <div class="card-show">
-                <%= image_tag(deal.offer.image, class:'card-product-img') %>
-              <div class="card-product-infos font-card">
-                <h2 class="mb-4 card-product-h2"><%= deal.offer.title.upcase %></h2>
-                <p class="card-product-user card-product-user-p"><strong>Descrição:</strong> <%= deal.offer.description %></p>
-                <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= deal.offer.niche %></p>
-                <p class="card-product-user card-product-user-p"><strong>Mídia:</strong> <%= deal.offer.media %></p>
-                <p class="card-product-user card-product-user-p mb-5"><strong>Alcance:</strong> <%= deal.offer.reach %> pessoas</p>
-                <p class="card-product-user card-product-user-p card-orientations"><strong>Suas orientações:</strong> <%= deal.directions %></p>
-              </div>
+        <div class="card-show">
+          <%= image_tag(deal.offer.image, class:'card-product-img') %>
+          <div class="card-product-infos font-card">
+            <h2 class="mb-4 card-product-h2"><%= deal.offer.title.upcase %></h2>
+            <p class="card-product-user card-product-user-p"><strong>Descrição:</strong> <%= deal.offer.description %></p>
+            <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= deal.offer.niche %></p>
+            <p class="card-product-user card-product-user-p"><strong>Mídia:</strong> <%= deal.offer.media %></p>
+            <p class="card-product-user card-product-user-p mb-5"><strong>Alcance:</strong> <%= deal.offer.reach %> pessoas</p>
+            <p class="card-product-user card-product-user-p card-orientations"><strong>Suas orientações:</strong> <%= deal.directions %></p>
           </div>
-    <% end  %>
+        </div>
+      <% end  %>
+    </div>
+    <a class="arrow" href="#imparcialidades"><i class="fa-solid fa-arrow-up"></i></a>
   </div>
-   <a class="arrow" href="#imparcialidades"><i class="fa-solid fa-arrow-up"></i></a>
-</div>
 <% else %>
 
-<div class = "container-md mt-3">
+  <div class = "container-md mt-3">
 
-  <div class="container mt-2 mb-4">
-    <%= link_to  '<i class="fa-solid fa-arrow-left"></i>'.html_safe, offers_path, class:'arrow arrow-top'%>
-  </div>
+    <div class="container mt-2 mb-4">
+      <%= link_to  '<i class="fa-solid fa-arrow-left"></i>'.html_safe, offers_path, class:'arrow arrow-top'%>
+    </div>
 
     <div class="card-product-show-back">
-    <h2 class="font-card">IMPARCIALIDADES</h2>
+      <h2 class="font-card">IMPARCIALIDADE</h2>
 
-    <% @journalist_offers.reverse.each do |offer|  %>
-    <div class="card-show">
-      <%= image_tag(offer.image, class:'card-product-img') %>
-      <div class="card-product-infos font-card">
-        <h2 class="mb-4 card-product-h2"><%= offer.title.upcase %></h2>
-        <p class="card-product-user card-product-user-p"><strong>Descrição:</strong> <%= offer.description %></p>
-        <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= offer.niche %></p>
-        <p class="card-product-user card-product-user-p"><strong>Mídia:</strong> <%= offer.media %></p>
-        <p class="card-product-user card-product-user-p"><strong>Alcance:</strong> <%= offer.reach %> pessoas</p>
-        <%= link_to "Editar", edit_offer_path(offer), class:"btn btn-primary mt-3" if policy(offer).edit? %>
-        <%= link_to "Apagar", offer_path(offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger mt-3 text-white" if policy(offer).destroy? %>
-      </div>
+      <% @journalist_offers.reverse.each do |offer|  %>
+        <div class="card-show">
+          <%= image_tag(offer.image, class:'card-product-img') %>
+          <div class="card-product-infos font-card">
+            <div>
+              <h2 class="mb-4 card-product-h2"><%= offer.title.upcase %></h2>
+              <p class="card-product-user card-product-user-p"><strong>Descrição:</strong> <%= offer.description %></p>
+              <p class="card-product-user card-product-user-p"><strong>Nicho:</strong> <%= offer.niche %></p>
+              <p class="card-product-user card-product-user-p"><strong>Mídia:</strong> <%= offer.media %></p>
+              <p class="card-product-user card-product-user-p"><strong>Alcance:</strong> <%= offer.reach %> pessoas</p>
+            </div>
+            <div class="d-flex align-items-end justify-content-end gap-3">
+              <%= link_to "Edit", edit_offer_path(offer), class:"btn btn-dark p2 btn-rounded-index" if policy(offer).edit? %>
+              <%= link_to "Delete", offer_path(offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-secondary p2 text-white btn-rounded-index" if policy(offer).destroy? %>
+            </div>
+          </div>
+        </div>
+      <% end  %>
     </div>
-    <% end  %>
+    <a class="arrow" href="#imparcialidades"><i class="fa-solid fa-arrow-up"></i></a>
   </div>
-   <a class="arrow" href="#imparcialidades"><i class="fa-solid fa-arrow-up"></i></a>
-</div>
 <% end %>
