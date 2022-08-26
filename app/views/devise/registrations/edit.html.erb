@@ -3,7 +3,7 @@
     <div class="rounded m-4">
       <div class="row justify-content-center form-edit-user">
         <div class="col-12">
-          <h2>Editar Usuário</h2>
+          <h2 class="font-card">Editar Usuário</h2>
 
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= f.error_notification %>
@@ -32,12 +32,12 @@
             </div>
 
             <div class="form-actions">
-              <%= f.button :submit, "Atualizar", class: "btn btn-success mb-5" %>
+              <%= f.button :submit, "Atualizar", class: "btn btn-success mb-5 btn-rounded-index" %>
             </div>
           <% end %>
 
           <p>Infeliz? Não foi reeleito?</p>
-          <%= link_to "Cancele sua conta AQUI", registration_path(resource_name), data: { confirm: "Você tem certeza?" }, method: :delete, class: "btn btn-dark" %>
+          <%= link_to "Cancele sua conta AQUI", registration_path(resource_name), data: { confirm: "Você tem certeza?" }, method: :delete, class: "btn btn-dark btn-rounded-index" %>
           <p class="mt-3"><%= link_to "Voltar", :back, class: "text-decoration-none" %></p>
         </div>
       </div>

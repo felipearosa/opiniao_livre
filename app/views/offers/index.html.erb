@@ -7,7 +7,7 @@
 
 <% if @user && @user.politician == false %>
   <div class="container text-center">
-    <%= link_to 'NOVA IMPARCIALIDADE', new_offer_path, class: 'btn btn-secondary my-5' %>
+    <%= link_to 'NOVA IMPARCIALIDADE', new_offer_path, class: 'btn btn-dark my-5 btn-rounded-index' %>
   </div>
 <% end %>
 
@@ -25,7 +25,7 @@
             <p><strong>Alcance:</strong> <%= offer.reach %> pessoas</p>
             <h6><%= number_to_currency(offer.price) %> <span class="text-success"> ou até 10 x de <%= number_to_currency(offer.price_installments)  %> sem juros </span></h6>
 
-            <%= link_to 'Detalhes | Comprar', offer_path(offer), class: 'btn btn-success my-3 btn-rounded-index font-card' %>
+            <%= link_to 'COMPRAR', offer_path(offer), class: 'btn btn-success my-3 btn-rounded-index font-card' %>
           </div>
         </div>
       </div>
