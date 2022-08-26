@@ -5,14 +5,8 @@ $optionDefaultColours: #ed5565, #fc6e51, #ffce54, #2ecc71, #5d9cec, #ac92ec;
 body {
    display: flex;
    flex-direction: column;
-   height: 100vh;
+   min-height: 100vh;
 
-
-   transition: 0.25s;
-     dark {
-      background: #232223;
-      color: white;
-   }
 
    .container-logo {
     font-family: "Franchise";
